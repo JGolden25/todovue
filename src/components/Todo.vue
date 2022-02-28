@@ -5,7 +5,7 @@ export default {
   props: {
     msg: String,
   },
-  el: '#statusFilter',
+  el: '#app',
   data() {
     return {
       task: '',
@@ -66,8 +66,8 @@ export default {
      * Deletes task by index
      */
     deleteTask(index) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.tasks));
       this.tasks.splice(index, 1);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.tasks));
     },
     /**
      * Edit task
@@ -158,7 +158,7 @@ export default {
         </tr>
       </tbody>
     </table>
-    <div class="extra-container" id="statusFilter">
+    <div class="extra-container" id="app">
       <label>Filter</label>
       <select v-model="status2">
         <option value="">All</option>
